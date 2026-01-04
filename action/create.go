@@ -29,6 +29,11 @@ func createProject(projectName string) error {
 		return fmt.Errorf("invalid project name: %s", projectName)
 	}
 
+	// Check if project directory already exists
+	if _, err := os.Stat(projectName); !os.IsNotExist(err) {
+		return fmt.Errorf("project directory '%s' already exists", projectName)
+	}
+
 	fmt.Println("creating project: " + projectName)
 	// 1. clone the repository
 	repo := "https://github.com/seedgo/seedgo-skeleton"
