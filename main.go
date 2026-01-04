@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/seedgo/seedgo/action"
+	"github.com/seedgo/seedgo-cli/action"
 	"github.com/urfave/cli/v3"
 )
 

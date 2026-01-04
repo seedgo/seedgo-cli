@@ -1,40 +1,9 @@
 package action
 
 import (
-	"fmt"
-	"io"
 	"os"
-	"os/exec"
 	"testing"
-
-	"github.com/urfave/cli/v3"
 )
-
-// MockCmd is a mock for exec.Cmd
-type MockCmd struct {
-	shouldFail bool
-}
-
-func (m *MockCmd) Run() error {
-	if m.shouldFail {
-		return fmt.Errorf("mock command failed")
-	}
-	return nil
-}
-
-// MockExecCommand creates a mock exec.Command function
-func MockExecCommand(command string, args ...string) *exec.Cmd {
-	cmd := &exec.Cmd{
-		Path: command,
-		Args: append([]string{command}, args...),
-	}
-	return cmd
-}
-func buildMinimalTestCommand() *cli.Command {
-	// reset the help flag because tests may have set it
-	cli.HelpFlag.(*cli.BoolFlag).Name = "test"
-	return &cli.Command{Writer: io.Discard}
-}
 
 // TestCreateProject_EmptyProjectName tests the case when project name is empty
 func TestCreateProject_EmptyProjectName(t *testing.T) {
