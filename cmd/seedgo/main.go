@@ -13,7 +13,7 @@ func main() {
 	app := &cli.Command{
 		EnableShellCompletion: true,
 		Name:                  "seedgo",
-		Version:               "v0.0.5",
+		Version:               "v0.0.6",
 		Usage:                 "command line tool for seedgo golang framework",
 		UsageText:             "seedgo create project [projectName]",
 		Commands: []*cli.Command{

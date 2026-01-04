@@ -1,7 +1,7 @@
 # Usage
 ## 1. Install this cmd tool `seedgo`
 ```bash
- go install github.com/seedgo/seedgo-cli/cmd/seedgo@v0.0.5 // install specific version
+ go install github.com/seedgo/seedgo-cli/cmd/seedgo@v0.0.6 // install specific version
  // or
  go install github.com/seedgo/seedgo-cli/cmd/seedgo@latest // install latest version
 ```
